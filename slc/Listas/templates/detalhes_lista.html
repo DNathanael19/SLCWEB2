@@ -8,13 +8,12 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <h1>Flight {{ flight.id }}</h1>
-    <ul>
-        <li>Origin: {{ flight.item }}</li>
-    </ul>
-    <a href="{% url 'index' %}">All Flights</a>
+    
+    <h1>{{ flight.item }}</h1>
 
-    <h2>Passengers:</h2>
+    <a href="{% url 'index' %}">Todas as listas</a>
+
+    <h2>Itens da lista</h2>
     <ul>
         {% for passenger in passengers %}
             <li>{{ passenger }}</li>
