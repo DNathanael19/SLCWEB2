@@ -13,6 +13,13 @@
             <li><a href="{% url 'flight' flight.id %}">{{ flight.item }}</a></li>
         {% endfor %}
     </ul>
+
+    <form action="{% url 'salvar' %}" method="POST">
+        {% csrf_token %}
+        <p>Escreva o nome do produto</p>
+        <input type="text" name="nome_produto">
+        <button type="submit">Salvar</button>
+    </form>
 {% endblock %}
 </body>
 </html>
