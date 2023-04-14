@@ -8,7 +8,6 @@ class Lista(models.Model):
     def __str__(self):
         return f"{self.nome}"
 
-
 class Iten(models.Model):
     item = models.ForeignKey(Lista, on_delete=models.CASCADE, related_name="departures")
 
