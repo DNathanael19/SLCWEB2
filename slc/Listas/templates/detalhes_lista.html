@@ -16,11 +16,18 @@
     <h2>Itens da lista</h2>
     <ul>
         {% for passenger in passengers %}
-            <li>{{ passenger }}</li>
+            <li>{{ passenger }}
+            <a href="{% url 'editar' passenger.id%}">Editar</a>
+            <a href="{% url 'delete' passenger.id%}">Deletar</a>
+            </li>
+            
         {% empty %}
-            <li>No Passengers.</li>
+            <li>Sem itens na lista</li>
         {% endfor %}
     </ul>
+
+    <h1>Adicionar Itens</h1>
+
     
 {% endblock %}
 </body>

@@ -14,12 +14,13 @@
         {% endfor %}
     </ul>
 
-    <form action="{% url 'salvar' %}" method="POST">
-        {% csrf_token %}
-        <p>Escreva o nome do produto</p>
-        <input type="text" name="nome_produto">
-        <button type="submit">Salvar</button>
-    </form>
+    <a id="add-link" href="newlist/">
+        Adicionar nova lista
+    </a><br><br>
+    <a id="add-link" href="newlist2/">
+        Selecionar lista criada
+    </a>
+
 {% endblock %}
 </body>
 </html>
