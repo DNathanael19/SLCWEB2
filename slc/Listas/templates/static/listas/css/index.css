@@ -1,0 +1,22 @@
+*{
+    background-color: azure;
+}
+
+h1{
+    color: darkcyan;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: darkcyan;
+    text-decoration: none;
+    transition: 0.5;
+}
+
+a:hover{
+    opacity: 0.3;
+    color: black;
+}

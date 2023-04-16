@@ -1,10 +1,14 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>App</title>
+    <link rel="stylesheet" href="{% static 'listas\css\newlist.css' %}">
+
 </head>
 <body>
-    {% extends "layout.html" %}
 
 {% block body %}
     <h1>Adicione a sua nova lista</h1>

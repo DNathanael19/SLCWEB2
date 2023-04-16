@@ -1,16 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>App</title>
+    <link rel="stylesheet" href="{% static 'listas\css\index.css' %}">
 </head>
 <body>
-    {% extends "layout.html" %}
 
 {% block body %}
+
+    <h1>Bem Vindo, {{ request.user.first_name }}</h1>
+    <ul>
+        <li>Nome: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+
+    <a href="{% url 'logout' %}">Log Out</a>
+
     <h1>LISTA</h1>
     <ul>
         {% for flight in flights %}
-            <li><a href="{% url 'flight' flight.id %}">{{ flight.item }}</a></li>
+            <li><a href="{% url 'flight' flight.id %}">{{ flight.item }}</a>
+                <a href="{% url 'delete2' flight.id%}">Deletar lista</a></li>
         {% endfor %}
     </ul>
 

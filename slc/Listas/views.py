@@ -1,11 +1,65 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import Iten, Lista, Passenger
 from django.urls import reverse
 from .forms import ListForm, ListForm2
-
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, logout
+from django.contrib.auth import login as login_django
 # Create your views here.
 
+
+def cadastro(request):
+    if request.method == 'GET':
+        return render(request, 'cadastro.html')
+    else:
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+
+        user = User.objects.filter(username=username).first()
+
+        if user:
+            return HttpResponse('Ja existe um usuario com esse username')
+        
+        user = User.objects.create_user(username=username, email=email, password=senha)
+        user.save()
+
+        return HttpResponseRedirect(reverse("login"))
+
+
+
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    
+    else:
+        username = request.POST.get('username')
+        senha = request.POST.get('senha')
+
+        user = authenticate(username=username, password=senha)
+
+        if user:
+            login_django(request, user)
+            return HttpResponseRedirect(reverse("index"))
+        
+        else:
+            return render(request, "login.html", {
+                            "message": "Invalid Credentials"
+                        })
+        
+def logout_view(request):
+    logout(request)
+    return render(request, "login.html", {
+                "message": "Logged Out"
+            })
+
+
+
 def index(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
     return render(request, "index.html", {
         "flights": Iten.objects.all()
     })
@@ -75,5 +129,10 @@ def update(request, id):
 
 def delete(request, id):
     app = Passenger.objects.get(id=id)
+    app.delete()
+    return redirect(index)
+
+def delete2(request, id):
+    app = Iten.objects.get(id=id)
     app.delete()
     return redirect(index)
