@@ -194,3 +194,10 @@ input{
     background-color: deepskyblue;
     cursor: pointer;
 }
+
+#lista2{
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+}

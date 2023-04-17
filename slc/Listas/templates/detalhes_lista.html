@@ -5,31 +5,36 @@
 <html lang="en">
 <head>
     <title>App2</title>
-    <link rel="stylesheet" href="{% static 'listas\css\detalhes.css' %}">
+    <link rel="stylesheet" href="{% static 'listas\css\style.css' %}">
 
 </head>
 <body>
 
 {% block body %}
+
+    <div class="container2">
+        <h1>{{ flight.item }}</h1>
     
-    <h1>{{ flight.item }}</h1>
-
-    <a href="{% url 'index' %}">Todas as listas</a>
-
-    <h2>Itens da lista</h2>
-    <ul>
-        {% for passenger in passengers %}
-            <li>{{ passenger }}
-            <a href="{% url 'editar' passenger.id%}">Editar</a>
-            <a href="{% url 'delete' passenger.id%}">Deletar</a>
+        <ul>
+            {% for passenger in passengers %}
+                <li id="lista"><br><br>{{ passenger }}
+                <a id="del" href="{% url 'editar' passenger.id%}">Editar</a>
+                <a id="del" href="{% url 'delete' passenger.id%}">Deletar</a><br>
             </li>
             
-        {% empty %}
-            <li>Sem itens na lista</li>
-        {% endfor %}
-    </ul>
+            {% empty %} <br>
+                <li id="lista">Sem itens na lista</li>
+            {% endfor %}
+        </ul><br><br>
 
-    <h1>Adicionar Itens</h1>
+        <div class="add">
+            <a class="novalist" href="#">Add Itens</a>
+        </div>
+
+    </div>
+    <div class="user">
+        <a id="logout" href="{% url 'index' %}">Todas as listas</a>
+    </div>
 
     
 {% endblock %}
