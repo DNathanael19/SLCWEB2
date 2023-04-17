@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import Iten, Lista, Passenger
 from django.urls import reverse
-from .forms import ListForm, ListForm2
+from .forms import ListForm, ListForm2, ListForm3
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as login_django
@@ -105,7 +105,18 @@ def newlist2(request):
         return render(request, 'newlist2.html', {'form':form2})
     
     
+def newlist3(request):
+    if request.method == 'POST':
+        form3 = ListForm3(request.POST)
 
+        if form3.is_valid():
+            task3 = form3.save(commit=False)
+            task3.save()
+            return redirect(index)
+    else:
+        form3 = ListForm3()
+        return render(request, 'newlist3.html', {'form':form3})
+    
 
 def editar(request, id):
     app = Passenger.objects.get(id=id)
