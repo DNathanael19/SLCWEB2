@@ -4,34 +4,42 @@
 <html lang="en">
 <head>
     <title>App</title>
-    <link rel="stylesheet" href="{% static 'listas\css\index.css' %}">
+    <link rel="stylesheet" href="{% static 'listas\css\style.css' %}">
 </head>
 <body>
 
 {% block body %}
 
-    <h1>Bem Vindo, {{ request.user.first_name }}</h1>
-    <ul>
-        <li>Nome: {{ request.user.username }}</li>
-        <li>Email: {{ request.user.email }}</li>
-    </ul>
+    <div class="user">
+        <h1 id="welcome">Bem Vindo, {{ request.user.first_name }}</h1><br>
+        <ul>
+            <li id="user">Nome: {{ request.user.username }}</li>
+            <li id="user">Email: {{ request.user.email }}</li><br><br>
+            <a id="logout" href="{% url 'logout' %}">Sair</a>
+        </ul>
+    </div>
 
-    <a href="{% url 'logout' %}">Log Out</a>
 
-    <h1>LISTA</h1>
-    <ul>
-        {% for flight in flights %}
-            <li><a href="{% url 'flight' flight.id %}">{{ flight.item }}</a>
-                <a href="{% url 'delete2' flight.id%}">Deletar lista</a></li>
-        {% endfor %}
-    </ul>
+    <div class="container2">
+        <h1>LISTA</h1><br><br>
+        <ul>
+            {% for flight in flights %}
+                <li><a id="lista" href="{% url 'flight' flight.id %}">{{ flight.item }}</a>
+                    <a id="del" href="{% url 'delete2' flight.id%}">Deletar lista</a></li><br><br><br>
+            {% endfor %}
+        </ul>
 
-    <a id="add-link" href="newlist/">
-        Adicionar nova lista
-    </a><br><br>
-    <a id="add-link" href="newlist2/">
-        Selecionar lista criada
-    </a>
+        <div class="add">
+            <a class="novalist" id="add-link" href="newlist/">
+                Adicionar nova lista
+            </a><br><br>
+            <a class="selectlist" id="add-link" href="newlist2/">
+                Selecionar lista criada
+            </a>
+        </div>
+    </div>
+
+    
 
 {% endblock %}
 </body>

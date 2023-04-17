@@ -5,33 +5,26 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'listas\css\cadastro.css' %}">
+    <link rel="stylesheet" href="{% static 'listas\css\style.css' %}">
 
 </head>
 <body>
 
 {% block body %}
 
-    <h1>Login</h1>
+    <div class="container">
+        <h1>Login</h1><br>
 
-    {% if message %}
-        <div>{{ message }}</div>
-    {% endif %}
+        <form action="{% url 'login' %}" method="POST">
 
-    <form action="{% url 'login' %}" method="POST">
-
-        {% csrf_token %}
-        
-        <input type="text" placeholder="Username..." name="username">
-        <br>
-        <input type="password" placeholder="Senha..." name="senha">
-        <br>
-        <input type="submit" value="Logar">
-        <br>
-        <a href="{% url 'cadastro' %}">Cadastra-se</a>
-
-
-    </form>
+            {% csrf_token %}
+            
+            <input type="text" placeholder="Username..." name="username"><br><br>
+            <input type="password" placeholder="Senha..." name="senha"><br><br>
+            <input id="button" type="submit" value="Logar"><br><br>
+            <a id="cadastro" href="{% url 'cadastro' %}">Cadastra-se</a>
+        </form>
+    </div>
 
 {% endblock %}
 </body>

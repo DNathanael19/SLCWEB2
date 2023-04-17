@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Raleway:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    background-color: #1a6862;
+}
+
+.container{
+    border-radius: 16px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.9);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    align-items: center;
+}
+
+.container2{
+    border-radius: 16px;
+    padding: 50px;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.9);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+input{
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.user{
+    height: 30vh;
+    align-items: center;
+    top: 10%;
+    width: 30%;
+    align-items: center;
+    position: absolute;
+}
+
+#welcome{
+    margin-left: 10%;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    color: white;   
+}
+
+#user{
+    margin-left: 10%;
+    text-align: justify;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+#button{
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+#button:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+#cadastro{
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#cadastro:hover{
+    opacity: 0.5;
+}
+
+
+#logout{
+    margin-left: 10%;
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#logout:hover{
+    opacity: 0.5;
+}
+
+#lista{
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#lista:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#del{
+    margin-left: 5%;
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    list-style: none;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#del:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.add{
+    display: flex;
+}
+
+.novalist{
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    list-style: none;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.novalist:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.selectlist{
+    margin-left: 5%;
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    list-style: none;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.selectlist:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
