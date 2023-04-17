@@ -21,7 +21,7 @@
 
 
     <div class="container2">
-        <h1>LISTA</h1><br><br>
+        <h1>Listas</h1><br><br>
         <ul>
             {% for flight in flights %}
                 <li><a id="lista" href="{% url 'flight' flight.id %}">{{ flight.item }}</a>

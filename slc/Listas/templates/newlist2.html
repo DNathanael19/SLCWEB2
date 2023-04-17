@@ -5,20 +5,20 @@
 <html lang="en">
 <head>
     <title>App</title>
-    <link rel="stylesheet" href="{% static 'listas\css\newlist.css' %}">
+    <link rel="stylesheet" href="{% static 'listas\css\style.css' %}">
 
 </head>
 <body>
 
 {% block body %}
-    <h1>Adicione a sua nova lista</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Selecionar">
-    </form>
-
-
+    <div class="container2">
+        <h1>Escolha a lista para adicionar</h1><br><br>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <br><br>
+            <input id="button" type="submit" value="Selecionar">
+        </form>
+    </div>
 {% endblock %}
 </body>
 </html>

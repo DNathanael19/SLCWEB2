@@ -5,19 +5,22 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'listas\css\update.css' %}">
+    <link rel="stylesheet" href="{% static 'listas\css\style.css' %}">
 
 </head>
 <body>
 
 {% block body %}
 
-    <form action="{% url 'update' app.id%}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="nome" value="{{app.first}}">
-        <p>Escreva como quiser</p>
-        <button type="submit">Update</button>
-    </form>
+    <div class="container2">
+        <h1>Digite como quiser: </h1><br><br>
+        <form action="{% url 'update' app.id%}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="nome" value="{{app.first}}"><br><br>
+            <button id="button" type="submit">Update</button>
+        </form>
+    </div>
+
 {% endblock %}
 </body>
 </html>
