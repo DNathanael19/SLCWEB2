@@ -4,7 +4,7 @@ from .views import flight, newlist, index, newlist2, newlist3, editar, update, d
 
 urlpatterns = [
     path('', index, name="index"),
-    path("<int:flight_id>", flight, name="flight"), 
+    path("<int:flight_id>", flight, name="flight"),
     path('newlist/', newlist, name='newlist'),
     path('newlist2/', newlist2, name='newlist2'),
     path('newlist3/', newlist3, name='newlist3'),
