@@ -56,7 +56,6 @@ def logout_view(request):
             })
 
 
-
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
