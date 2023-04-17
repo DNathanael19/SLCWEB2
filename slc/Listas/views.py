@@ -65,8 +65,6 @@ def index(request):
     })
 
 
-
-
 def flight(request, flight_id):
     flight = Iten.objects.get(id=flight_id)
     passengers = flight.passengers.all()
